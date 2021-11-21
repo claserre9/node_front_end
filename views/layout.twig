@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ title }}</title>
+{#    <link rel='stylesheet' href='/stylesheets/style.css' />#}
+  </head>
+  <body>
+    {% block body %}{% endblock %}
+    {% block javascripts %}
+      <script src="/build/bundle_js.js"></script>
+      <script src="/build/bundle_css.js"></script>
+    {% endblock %}
+
+  </body>
+</html>
