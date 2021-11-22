@@ -7,7 +7,7 @@ It uses twig as template engine and webpack to minify all your CSS and JS files.
 
 ### Usage
 
-When you pull this repo, please create the .env file and NODE_EN=developement for example.
+When you pull this repo, please create the .env file and NODE_ENV=developement for example.
 
 
 Make sure that you have node and npm installed before running :
