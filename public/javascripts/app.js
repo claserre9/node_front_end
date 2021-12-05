@@ -5,7 +5,7 @@
 
 const $ = require('jquery')
 
-//This line allows to include additional css files from node_modules
+//This line allows including additional css files from node_modules
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 

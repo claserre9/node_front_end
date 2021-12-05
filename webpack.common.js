@@ -1,14 +1,15 @@
-const fs = require('fs');
-const path = require('path')
-require('dotenv').config()
 
+const path = require('path')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const {styleFilesArray, jsFilesArray }= require('./staticfiles_provider')
+const TerserPlugin = require("terser-webpack-plugin");
+require('dotenv').config()
 
 module.exports = {
 	mode: process.env.NODE_ENV,
 	entry: {
-		bundle_js : jsFilesArray,
-		bundle_css : styleFilesArray
+		build : jsFilesArray,
+		// bundle_css : styleFilesArray
 	},
 	output: {
 		path: path.resolve(__dirname, './public/build'),
@@ -18,12 +19,14 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.css$/,
-				use: [
-					'style-loader',
-					'css-loader'
-				]
+				test: /\.css$/i,
+				use: [MiniCssExtractPlugin.loader, "css-loader",],
 			}
 		]
-	}
+	},
+	plugins: [
+		new MiniCssExtractPlugin(),
+		new TerserPlugin()
+	],
+
 };

@@ -1,4 +1,4 @@
-import fs from "fs";
+const fs = require('fs')
 
 let jsFilesArray = []
 let targetJSFiles = `./public/javascripts`
@@ -13,5 +13,6 @@ fs.readdirSync(targetStyleFiles).forEach(file => {
 });
 
 
-module.exports = jsFilesArray
-module.exports = styleFilesArray
+console.log(styleFilesArray, jsFilesArray)
+
+module.exports = {jsFilesArray, styleFilesArray}
