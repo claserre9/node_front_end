@@ -2,19 +2,7 @@ const fs = require('fs');
 const path = require('path')
 require('dotenv').config()
 
-let jsFilesArray = []
-let targetJSFiles = `./public/javascripts`
-fs.readdirSync(targetJSFiles).forEach(file => {
-	jsFilesArray.push(`${targetJSFiles}\/${file}`)
-});
-
-let styleFilesArray = []
-let targetStyleFiles = `./public/stylesheets`
-fs.readdirSync(targetStyleFiles).forEach(file => {
-	styleFilesArray.push(`${targetStyleFiles}\/${file}`)
-});
-
-console.log(process.env.NODE_ENV.trim() === "production")
+const {styleFilesArray, jsFilesArray }= require('./staticfiles_provider')
 
 module.exports = {
 	mode: process.env.NODE_ENV,
