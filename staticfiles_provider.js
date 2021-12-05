@@ -13,6 +13,4 @@ fs.readdirSync(targetStyleFiles).forEach(file => {
 });
 
 
-console.log(styleFilesArray, jsFilesArray)
-
 module.exports = {jsFilesArray, styleFilesArray}
